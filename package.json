@@ -1,0 +1,19 @@
+{
+  "name": "aryan-video-studio",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Aryan Video Studio - Image to Video and Prompt to Video workspace",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

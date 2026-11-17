@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a1020"><title>Aryan Video Studio</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="glow glow-a"></div><div class="glow glow-b"></div>
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-icon">A</span><span>ARYAN <b>VIDEO STUDIO</b></span></a>
+  <div class="top-status"><i></i> CREATOR WORKSPACE</div>
+</header>
+<main class="container">
+  <section class="hero">
+    <div class="eyebrow"><span></span> YOUR AI VIDEO CREATION SPACE</div>
+    <h1>Turn your vision<br><em>into motion.</em></h1>
+    <p>Create a video from one image or bring a text prompt to life.</p>
+  </section>
+  <section class="studio">
+    <div class="section-kicker">01 <span>/</span> CHOOSE YOUR MODE</div>
+    <div class="mode-switch" role="tablist" aria-label="Video mode">
+      <button class="mode-tab active" type="button" data-mode="image" role="tab" aria-selected="true"><span>▧</span> Image to Video</button>
+      <button class="mode-tab" type="button" data-mode="text" role="tab" aria-selected="false"><span>✦</span> Prompt to Video</button>
+    </div>
+
+    <section id="imageMode" class="image-section">
+      <div class="section-head"><div><div class="section-kicker">02 <span>/</span> YOUR IMAGE</div><h2>Start with an image</h2></div><span class="tag">ONE IMAGE</span></div>
+      <label class="upload-zone" id="uploadZone" for="imageFile">
+        <input id="imageFile" type="file" accept="image/jpeg,image/png,image/webp">
+        <span class="upload-symbol">＋</span>
+        <strong>Choose an image</strong>
+        <span class="upload-sub">or drag and drop it here</span>
+        <span class="file-types">JPG · PNG · WEBP · UP TO 15 MB</span>
+      </label>
+      <div id="imagePreviewWrap" class="image-preview" hidden>
+        <img id="imagePreview" alt="Selected image preview">
+        <div class="preview-info"><strong id="imageName">Selected image</strong><span id="imageSize"></span></div>
+        <button id="removeImage" class="remove-btn" type="button">Remove image</button>
+      </div>
+      <p class="helper">Select one image from your computer. It will be stored locally in this app for now. Secure public media hosting will be added before Kling is connected.</p>
+    </section>
+
+    <section class="prompt-section">
+      <div class="section-head"><div><div class="section-kicker"><span id="promptStep">03</span> <span>/</span> CREATIVE DIRECTION</div><h2>Describe your video</h2></div></div>
+      <label class="prompt-box" for="prompt"><span class="input-label">YOUR PROMPT</span>
+        <textarea id="prompt" rows="5" maxlength="2000" placeholder="Describe the motion, camera movement, lighting, atmosphere and what should happen in the video..."></textarea>
+        <span class="prompt-bottom"><span>Tip: Be clear and specific for better results.</span><span id="charCount">0 / 2000</span></span>
+      </label>
+    </section>
+
+    <section class="settings">
+      <div class="section-kicker">04 <span>/</span> VIDEO SETTINGS</div>
+      <div class="settings-grid">
+        <div class="setting"><span class="setting-label">RESOLUTION</span><div class="choice-row" id="resolutionChoices"><button class="choice active" data-value="720p" type="button">720p <small>FLASH</small></button></div></div>
+        <div class="setting"><span class="setting-label">VIDEO LENGTH</span><div class="choice-row" id="durationChoices"><button class="choice active" data-value="5" type="button">5 sec</button><button class="choice" data-value="10" type="button">10 sec</button><button class="choice" data-value="15" type="button">15 sec</button><button class="choice" data-value="20" type="button">20 sec</button></div></div>
+        <div class="setting"><span class="setting-label">ASPECT RATIO</span><div class="choice-row" id="ratioChoices"><button class="choice active" data-value="adaptive" type="button">Adaptive</button><button class="choice" data-value="16:9" type="button">16:9</button><button class="choice" data-value="9:16" type="button">9:16</button><button class="choice" data-value="1:1" type="button">1:1</button></div></div>
+      </div>
+    </section>
+    <div class="bottom-actions">
+      <div class="privacy"><span>◆</span><div><b>Private workspace</b><small>Your selected image stays on this computer for now.</small></div></div>
+      <button id="generateBtn" class="generate" type="button">Prepare video <span>↗</span></button>
+    </div>
+    <section id="statusPanel" class="status-panel" hidden aria-live="polite">
+      <div class="status-heading"><div><div class="section-kicker">05 <span>/</span> WORKSPACE CHECK</div><h2 id="statusTitle">Ready</h2></div><span id="statusBadge" class="status-badge">READY</span></div>
+      <p id="statusMessage"></p><pre id="statusDetails"></pre>
+    </section>
+  </section>
+  <section class="library studio" id="videoLibrary">
+    <div class="library-heading">
+      <div><div class="section-kicker">06 <span>/</span> YOUR CREATIONS</div><h2>Video gallery</h2><p>Your saved videos, ready to preview or download.</p></div>
+      <label class="add-video-btn" for="videoFile">＋ Add video</label>
+      <input id="videoFile" type="file" accept="video/mp4,video/webm,video/quicktime" hidden>
+    </div>
+    <div id="galleryNotice" class="gallery-notice" aria-live="polite">Your gallery is ready. Add an MP4, WebM, or MOV video from your computer.</div>
+    <div id="videoGrid" class="video-grid"></div>
+  </section>
+  <footer><span>ARYAN VIDEO STUDIO</span><span>IMAGE TO VIDEO · PROMPT TO VIDEO · VIDEO GALLERY · 2026</span></footer>
+</main>
+<script src="/app.js"></script>
+</body></html>
